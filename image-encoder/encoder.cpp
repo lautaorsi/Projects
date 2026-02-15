@@ -15,18 +15,12 @@ int main()
 
     Mat grayscale_image(w, w, CV_8UC1, Scalar(255));    //Hacemos que sea cuadrada y blanca
 
-    string fileName;
-    cout << "Ingresa nombre de archivo: \n";
+    string fileName, imageName;
+    cout << "Ingresa nombre de archivo a encriptar: \n";
     cin >> fileName;
     system("clear");
-    cout << "Encriptando. \n";
-    sleep(1);
-    system("clear");
-    cout << "Encriptando.. \n";
-    sleep(1);
-    system("clear");
-    cout << "Encriptando... \n";
-    sleep(2);
+    cout << "Ingresa nombre de archivo encriptado: \n";
+    cin >> imageName;
     system("clear");
     cout << "Archivo encriptado con éxito! \n";
     string myText;
@@ -57,7 +51,9 @@ int main()
         return -1;
     }
 
-    imwrite("encriptado.png", grayscale_image);
+    string newName = imageName.append(".png");
+
+    imwrite(newName, grayscale_image);
 
     return 0;
 
